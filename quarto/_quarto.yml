@@ -1,0 +1,34 @@
+project:
+  type: website
+  output-dir: docs/
+  resources:
+    - quarto/
+
+website:
+  title: ""
+  navbar:
+    left:
+      - text: "Home"
+        file: index.qmd
+      - text: "Larval Cultures"
+        file: cultures.qmd
+      - text: "Larval Ponds"
+        file: ponds.qmd
+      - text: "Data"
+        file: data.qmd
+    right:
+      - icon: github
+        href: https://github.com/marine-ecologist/larvae
+        aria-label: GitHub
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: cosmo
+    page-layout: full
+    max-width: 24000px
+    toc: false
+execute:
+  echo: true
+  warning: false

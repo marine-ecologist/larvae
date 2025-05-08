@@ -1,7 +1,12 @@
 ---
-title: "index"
+title: "Interactive dashboards for MC Larval culture (8/5/25)"
 format: html
 editor: visual
 ---
 
-## 
+::: column-page
+
+![](images/culture.png)
+
+![](images/ponds.png)
+:::
