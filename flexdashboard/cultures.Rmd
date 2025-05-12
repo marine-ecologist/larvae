@@ -6,7 +6,6 @@ output:
       version: 4
       bootswatch: cosmo
     orientation: columns
-    runtime: shiny
     vertical_layout: fill
 ---
 
