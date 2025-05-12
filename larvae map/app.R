@@ -1,4 +1,7 @@
 
+if (!requireNamespace("DT", quietly = TRUE)) {
+  install.packages("DT")
+}
 library(DT)
 library(tidyverse)
 library(readxl)
