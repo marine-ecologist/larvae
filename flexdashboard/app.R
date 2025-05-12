@@ -1,5 +1,7 @@
 # app.R
 
+library(htmlwidgets)
+library(crosstalk)
 library(shiny)
 library(tidyverse)
 library(readxl)
