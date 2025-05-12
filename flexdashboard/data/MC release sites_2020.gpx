@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="-23.507135796518380" minlon="151.902441339773990" maxlat="-23.457100301152039" maxlon="152.090244704825810"/></metadata>              
+<wpt lat="-23.45744006372686" lon="151.904382654700498">
+  <name>Pipe1_release_001</name>
+</wpt>
+<wpt lat="-23.45849" lon="151.908">
+  <name>Pipe2_release_002</name>
+</wpt>
+<wpt lat="-23.45953" lon="151.90839">
+  <name>ASV1_release_003</name>
+</wpt>
+<wpt lat="-23.45889" lon="151.90823">
+  <name>ASV2_release_004</name>
+</wpt>
+<wpt lat="-23.459980111555819" lon="151.909303480518986">
+  <name>Control1_005</name>
+</wpt>
+<wpt lat="-23.458776223210041" lon="151.907125956857186">
+  <name>Control2_006</name>
+</wpt>
+<wpt lat="-23.457100301152039" lon="151.902441339773986">
+  <name>Tiles_Device deployment</name>
+</wpt>
+<wpt lat="-23.504267187891891" lon="152.089174135365113">
+  <name>ASV1_release_021</name>
+</wpt>
+<wpt lat="-23.497809371326191" lon="152.086978573614914">
+  <name>ASV2_green channel marker</name>
+</wpt>
+<wpt lat="-23.498744662387981" lon="152.089229119210813">
+  <name>ASV3_release_Bucketpour</name>
+</wpt>
+<wpt lat="-23.503767342947121" lon="152.090244704825807">
+  <name>Control1</name>
+</wpt>
+<wpt lat="-23.502917068780231" lon="152.089110825730586">
+  <name>Control2</name>
+</wpt>
+<wpt lat="-23.501661954249339" lon="152.08722745247681">
+  <name>Control3</name>
+</wpt>
+<wpt lat="-23.50713579651838" lon="152.087716314381709">
+  <name>Octagon release point</name>
+</wpt>
+<wpt lat="-23.5071246133719" lon="152.087226166947801">
+  <name>Octagon tile array</name>
+</wpt>
+<wpt lat="-23.506254856184359" lon="152.087550589113107">
+  <name>Octagon control array</name>
+</wpt>
+</gpx>
