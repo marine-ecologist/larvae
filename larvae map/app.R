@@ -1,11 +1,8 @@
 
-
+library(DT)
 library(tidyverse)
 library(readxl)
 library(janitor)
-
-
-
 library(tidyverse)
 library(readxl)
 library(janitor)
@@ -15,7 +12,7 @@ library(janitor)
 
 culture_pools_2020 <-
   rbind(
-    # read_csv("/Users/rof011/Data - Larvae/data/2020/2.1.Witstari_Jetty_Pools_Culture_2020.csv", show_col_types = FALSE) |>
+    # read_csv("data/2020/2.1.Witstari_Jetty_Pools_Culture_2020.csv", show_col_types = FALSE) |>
     # clean_names() |>
     # mutate(volume = pool_bin_volume/1000, # note this must be ml not l
     #        density = larvae_ml*1000,
@@ -29,7 +26,7 @@ culture_pools_2020 <-
     #        ) |>
     # mutate(year = 2020, density=as.numeric(density)),
 
-    read_csv("/Users/rof011/Data - Larvae/data/2020/2.2.OTI_Pools_Culture_2020.csv", show_col_types = FALSE) |>
+    read_csv("data/2020/2.2.OTI_Pools_Culture_2020.csv", show_col_types = FALSE) |>
       clean_names() |>
       drop_na() |>
       mutate(
@@ -57,7 +54,7 @@ culture_pools_2020 <-
 
 
 
-culture_pools_2021 <- read_excel("/Users/rof011/Data - Larvae/data/2021/RearingLarvaeData_2021.xlsx", sheet="LarvaeDensity_Rearing") |>
+culture_pools_2021 <- read_excel("data/2021/RearingLarvaeData_2021.xlsx", sheet="LarvaeDensity_Rearing") |>
   clean_names() |>
   mutate(days =  as.numeric(sampling_date-spawning_date),
          date=as.POSIXct(sampling_date, format = "%d/%m/%Y")) |>
@@ -74,7 +71,7 @@ culture_pools_2021 <- read_excel("/Users/rof011/Data - Larvae/data/2021/RearingL
   mutate(total = density * volume)
 
 
-culture_pools_2022 <- read_excel("/Users/rof011/Data - Larvae/data/2022/Larval Density Database Lizard Is 2022.xlsx", sheet = "Culturing") |>
+culture_pools_2022 <- read_excel("data/2022/Larval Density Database Lizard Is 2022.xlsx", sheet = "Culturing") |>
   janitor::clean_names() |>
   rename(
     volume = pool_volume,
@@ -95,7 +92,7 @@ culture_pools_2022 <- read_excel("/Users/rof011/Data - Larvae/data/2022/Larval D
   mutate(total = density * volume)
 
 
-culture_pools_2023 <- read_excel("/Users/rof011/Data - Larvae/data/2023/DATA_MC_Collection_Cultures.xlsx", sheet="data_CultureClean") |>
+culture_pools_2023 <- read_excel("data/2023/DATA_MC_Collection_Cultures.xlsx", sheet="data_CultureClean") |>
   clean_names() |>
   mutate(date = date_sample,
          days =  as.numeric(date_sample-date_collection)/(60*60*24)) |>
@@ -115,7 +112,7 @@ culture_pools_2023 <- read_excel("/Users/rof011/Data - Larvae/data/2023/DATA_MC_
 
 
 
-culture_pools_2024 <- read_excel("/Users/rof011/Data - Larvae/data/2024/DATA_MC_SpawningOps_DataSheets_Nov-Dec2024.xlsx", sheet="data_LarvCulture1-6_CLEAN") |>
+culture_pools_2024 <- read_excel("data/2024/DATA_MC_SpawningOps_DataSheets_Nov-Dec2024.xlsx", sheet="data_LarvCulture1-6_CLEAN") |>
   clean_names() |>
   filter(volume_culture_l == 9280.0) |>
   mutate(
