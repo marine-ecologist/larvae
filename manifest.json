@@ -336,7 +336,7 @@
       "checksum": "e85813409969ac8ed42756fe1c50396e"
     },
     "larvae map/app.R": {
-      "checksum": "1071d29839360843fa0f9dd22fdd44dd"
+      "checksum": "dd495925984c082946b350e42fe36275"
     },
     "quarto/_quarto.yml": {
       "checksum": "5346a98bce6a568b792887c5eed8608d"
@@ -649,6 +649,9 @@
     },
     "R/data_processing.R": {
       "checksum": "c50d7de1f33cd8f50ca859083459566a"
+    },
+    "renv.lock": {
+      "checksum": "d374cbbf42227473990a060fadcc21be"
     }
   },
   "users": null
