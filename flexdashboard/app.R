@@ -298,7 +298,7 @@ server <- function(input, output, session) {
 
   output$summaryTable <- renderDataTable({
 
-   df <- dataset()
+    df <- dataset()
     req(df)
 
     # Determine which grouping vars to rename

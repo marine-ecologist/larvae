@@ -839,6 +839,32 @@
         "Archs": "dplyr.so.dSYM"
       }
     },
+    "DT": {
+      "Source": "CRAN",
+  	  "Repository": "https://cran.rstudio.com",
+  	  "description": {
+    	"Package": "DT",
+    	"Title": "A Wrapper of the JavaScript Library 'DataTables'",
+    	"Version": "0.33",
+    	"Authors@R": "c(person(\"Yihui\", \"Xie\", email = \"xie@yihui.name\", role = c(\"aut\", \"cre\")), person(\"Joe\", \"Cheng\", role = \"aut\"), person(\"RStudio\", role = \"cph\"))",
+	    "Description": "Provides an R interface to the JavaScript library DataTables. The package allows you to create interactive tables that can be embedded in R Markdown documents, Shiny apps, and more.",
+	    "URL": "https://github.com/rstudio/DT",
+	    "BugReports": "https://github.com/rstudio/DT/issues",
+	    "Depends": "R (>= 3.5.0)",
+	    "Imports": "htmltools, htmlwidgets, jsonlite, mime, utils",
+	    "Suggests": "knitr, rmarkdown, shiny, testthat, readr",
+	    "License": "GPL-3",
+	    "Encoding": "UTF-8",
+	    "RoxygenNote": "7.3.1",
+	    "NeedsCompilation": "no",
+	    "Packaged": "2024-04-18 10:33:52 UTC; yihui",
+	    "Author": "Yihui Xie [aut, cre],\n  Joe Cheng [aut],\n  RStudio [cph]",
+	    "Maintainer": "Yihui Xie <xie@yihui.name>",
+	    "Repository": "CRAN",
+	    "Date/Publication": "2024-04-18 12:00:05 UTC",
+	    "Built": "R 4.4.0; ; 2024-04-18 12:10:00 UTC; unix"
+  }
+}
     "dtplyr": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",

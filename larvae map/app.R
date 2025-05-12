@@ -353,15 +353,21 @@ server <- function(input, output, session) {
   height = function() input$plotHeight,
   width = function() input$plotWidth
   )
-  output$table <- renderDataTable({
-    if (input$yvar == "total") {
+
+  output$table <- renderUI({
+    df <- if (input$yvar == "total") {
       culture_pools_sum %>% filter(year %in% input$year_filter)
     } else if (input$yvar == "mean_pool") {
       culture_pools_mean %>% filter(year %in% input$year_filter)
     } else {
       culture_pools_mean_id %>% filter(year %in% input$year_filter)
     }
-  }, options = list(pageLength = 10, scrollX = TRUE))
-}
+
+    df %>%
+      knitr::kable(format = "html", digits = 2) %>%
+      kableExtra::kable_styling("striped", full_width = TRUE) %>%
+      HTML()
+  })
+
 
 shinyApp(ui, server)
