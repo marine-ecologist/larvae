@@ -11,7 +11,7 @@ website:
       - text: "Home"
         file: index.qmd
       - text: "Larval Cultures"
-        file: cultures.Rmd
+        file: cultures.qmd
       - text: "Larval Ponds"
         file: ponds.qmd
       - text: "Data"
