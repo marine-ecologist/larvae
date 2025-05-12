@@ -4,7 +4,6 @@ format: html
 editor: visual
 ---
 
-
 ### Inset larval culture locations per year
 
 ```{r fig.height=20, fig.width=20, show=FALSE, warning=FALSE, message=FALSE}
@@ -110,10 +109,7 @@ tm_shape(pool_sf |>
 
 ```
 
-
 ### Larval culture locations GBR-wide
-
-
 
 ```{r fig.height=20, fig.width=20, show=FALSE, warning=FALSE, message=FALSE}
 #| echo: false
