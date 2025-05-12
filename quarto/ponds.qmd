@@ -40,7 +40,7 @@ pool_2022 <- data.frame(
   lat = c(-14.693783, -14.693233, -14.693233, -14.692867, -14.698499),
   lon = c(145.458017, 145.458033, 145.458167, 145.458183, 145.444637)
 ) |>
-  mutate(year=2023) |>
+  mutate(year=2022) |>
   st_as_sf(coords = c("lon", "lat"), crs = 4326)
 
 pool_2023 <- data.frame(
@@ -83,7 +83,7 @@ pool_2024 <- data.frame(
   st_as_sf(coords = c("lon", "lat"), crs = 4326)
 
 
-pool_sf <- rbind(pool_2020, pool_2021,pool_2022,pool_2023,pool_2024)
+pool_sf <- rbind(pool_2021,pool_2022,pool_2023,pool_2024)
 
 tmap_mode("view")
 
@@ -188,7 +188,7 @@ pool_2024 <- data.frame(
   st_as_sf(coords = c("lon", "lat"), crs = 4326)
 
 
-pool_sf <- rbind(pool_2020, pool_2021,pool_2022,pool_2023,pool_2024)
+pool_sf <- rbind(pool_2021,pool_2022,pool_2023,pool_2024)
 
 tmap_mode("view")
 
