@@ -164,7 +164,6 @@ label_map <- c(
   days = "Days",
   year = "Year",
   id = "Pool ID",
-  replicate = "Replicate",
   density = "Larval density (per 1l)",
   total = "Total larvae per pool"
 )
@@ -228,9 +227,9 @@ ui <- fluidPage(
           div(class = "sidebar-fixed",
           div(class = "well",
               selectInput("xvar", "X-axis",
-                          choices = setNames(names(label_map)[1:4], label_map[1:4]), selected = "days"),
+                          choices = setNames(names(label_map)[1:3], label_map[1:3]), selected = "days"),
               selectInput("yvar", "Y-axis",
-                          choices = setNames(names(label_map)[5:6], label_map[5:6]), selected = "total"),
+                          choices = setNames(names(label_map)[4:5], label_map[4:5]), selected = "total"),
           ),
           div(class = "well",
               radioGroupButtons("agg_method", NULL, choices = c("Mean" = "mean", "Sum" = "sum"),
@@ -238,9 +237,10 @@ ui <- fluidPage(
           ),
           div(class = "well",
               selectInput("facetvar", "Grouping (row)",
-                          choices = c("None", setNames(names(label_map)[1:4], label_map[1:4])), selected = "year"),
+                          choices = c("None", setNames(names(label_map)[1:3], label_map[1:3])), selected = "year"),
               selectInput("facetvar2", "Grouping (col)",
-                          choices = c("None", setNames(names(label_map)[1:4], label_map[1:4])), selected = "None")          ),
+                          choices = c("None", setNames(names(label_map)[1:3], label_map[1:3])), selected = "None")
+       ),
           div(class = "well",
               checkboxInput("show_error", "Show SE", TRUE),
               checkboxInput("show_legend", "Show legend", FALSE),
@@ -255,20 +255,28 @@ ui <- fluidPage(
   )
 )
 server <- function(input, output, session) {
-  dataset <- reactive({
-    req(input$xvar, input$yvar)
-    vars <- unique(c(input$xvar, input$facetvar, input$facetvar2))
-    vars <- vars[vars != "None"]
-    if (!input$yvar %in% names(culture_pools)) return(NULL)
-    agg_fun <- match.fun(input$agg_method)
-    culture_pools %>%
-      group_by(across(all_of(vars))) %>%
-      summarise(
-        value = agg_fun(.data[[input$yvar]], na.rm = TRUE),
-        se = if (input$show_error) sd(.data[[input$yvar]], na.rm = TRUE) / sqrt(n()) else NA_real_,
-        .groups = "drop"
-      )
-  })
+ dataset <- reactive({
+  req(input$xvar, input$yvar)
+
+  # group first by year, days, id to average replicates
+  base_avg <- culture_pools %>%
+    group_by(year, days, id) %>%
+    summarise(across(all_of(input$yvar), mean, na.rm = TRUE), .groups = "drop")
+
+  # now group by selected x and facets
+  vars <- unique(c(input$xvar, input$facetvar, input$facetvar2))
+  vars <- vars[vars != "None"]
+
+  agg_fun <- match.fun(input$agg_method)
+
+  base_avg %>%
+    group_by(across(all_of(vars))) %>%
+    summarise(
+      value = agg_fun(.data[[input$yvar]], na.rm = TRUE),
+      se = if (input$show_error) sd(.data[[input$yvar]], na.rm = TRUE) / sqrt(n()) else NA_real_,
+      .groups = "drop"
+    )
+})
 
   output$mainPlot <- renderPlot({
     df <- dataset()
